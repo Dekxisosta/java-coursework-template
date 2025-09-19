@@ -44,7 +44,6 @@ public class Main{
             showOptions(actionNames);
             showEnterPrompt("choice");
 
-            // !!! Modify max value by the number of actions
             int choice = getIntWithinRange(0,actionNames.length-1);
 
             if(choice!=0)
