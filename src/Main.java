@@ -12,6 +12,7 @@ public class Main{
     /* ==========================
      * INSTANCE FIELDS
      ==========================*/
+    /** Console input reader */
     private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
     /* ==========================
