@@ -7,21 +7,21 @@ class ConsoleUI {
     Service service = new Service();
 
     /** Efficient reader for console inputs */
-    private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    private final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
     /** Constructor for the Console UI class */
     ConsoleUI(){}
 
     /**
      * Dispatches actions from the business layer
-     * @param choice
+     * @param choice the index of the action to be dispatched
      */
     void menu(int choice){
         switch(choice){
             case 0:
                 break;
             default:
-                showMessage(ConsoleTag.DEBUG, "No set action for index" + choice);
+                showDebugMessage("No set action for index" + choice);
         }
     }
     /**
@@ -29,7 +29,7 @@ class ConsoleUI {
      * @return y/n value, y will proceed with termination, n will not
      */
     boolean promptTermination(){
-        showMessage(ConsoleTag.SYSTEM, "Exit the program?");
+        showSystemMessage("Exit the program?");
         showOptions(new String[] {"NO", "YES"});
         showEnterPrompt("choice");
 
@@ -39,6 +39,10 @@ class ConsoleUI {
     /* ==========================
      * USER-INTERFACE METHODS
      ==========================*/
+    /**
+     * Shows the program name.
+     * Better if put in a .properties file
+     */
     void showProgramName(){
         printf("%n%n======== %s ========", "Java Coursework Menu Options");
     }
@@ -71,6 +75,34 @@ class ConsoleUI {
     }
 
     /**
+     * Shows an error message.
+     * Good for catching exception-handling
+     * @param message the message to be conveyed
+     */
+    void showErrorMessage(String message){ showMessage(ConsoleTag.ERROR, message); }
+
+    /**
+     * Shows an info message.
+     * Good for showing products of processes
+     * @param message the message to be conveyed
+     */
+    void showInfoMessage(String message){ showMessage(ConsoleTag.INFO, message); }
+
+    /**
+     * Shows a system message.
+     * More about what is to be performed than products of processes
+     * @param message the message to be conveyed
+     */
+    void showSystemMessage(String message){ showMessage(ConsoleTag.SYSTEM, message); }
+
+    /**
+     * Shows a debug message
+     * Useful for catching expected bugs during development
+     * @param message the message to be conveyed
+     */
+    void showDebugMessage(String message){ showMessage(ConsoleTag.DEBUG, message); }
+
+    /**
      * Shows a set of options
      * @param options the set of options to be displayed
      */
@@ -94,9 +126,9 @@ class ConsoleUI {
             try{
                 return Integer.parseInt(reader.readLine());
             }catch(NumberFormatException e){
-                showMessage(ConsoleTag.ERROR, "Invalid number format. Please try again");
+                showErrorMessage( "Invalid number format. Please try again");
             }catch(IOException e){
-                showMessage(ConsoleTag.ERROR, "Invalid input. Please try again");
+                showErrorMessage("Invalid input. Please try again");
             }
             showEnterPrompt("new integer");
         }
@@ -114,7 +146,7 @@ class ConsoleUI {
             if(num >= min && num <= max){
                 return num;
             }
-            showMessage(ConsoleTag.ERROR, "Invalid number. Must be within ["+min+".."+max+"].");
+            showErrorMessage("Invalid number. Must be within ["+min+".."+max+"].");
             showEnterPrompt("new integer");
         }
     }
@@ -128,7 +160,7 @@ class ConsoleUI {
             try{
                 return reader.readLine();
             }catch(IOException e){
-                showMessage(ConsoleTag.ERROR, "Invalid input, Please try again");
+                showErrorMessage("Invalid input, Please try again");
             }
             showEnterPrompt("new text");
         }
@@ -154,7 +186,7 @@ class ConsoleUI {
                     || bool.equalsIgnoreCase("0")){
                 return false;
             }
-            showMessage(ConsoleTag.ERROR, "Invalid input. Please try again");
+            showErrorMessage("Invalid input. Please try again");
             showEnterPrompt("(y/n)");
         }
     }

@@ -3,6 +3,6 @@
  */
 class DataModel {
     /** Constructor class */
-    DataModel(){};
+    DataModel(){}
 
 }

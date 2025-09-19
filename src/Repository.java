@@ -8,5 +8,4 @@ class Repository {
 
     /** Constructor class */
     Repository(){};
-
 }
