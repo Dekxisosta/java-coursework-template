@@ -22,7 +22,9 @@ public class Main{
     public static void main(String[] args){
         try{
             new Main().run();
-        }catch(Exception ignored){}
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 
     /* ==========================
@@ -43,7 +45,7 @@ public class Main{
             showEnterPrompt("choice");
 
             // !!! Modify max value by the number of actions
-            int choice = getIntWithinRange(0,0);
+            int choice = getIntWithinRange(0,actionNames.length-1);
 
             if(choice!=0)
                 actionMenu(choice);
@@ -63,7 +65,10 @@ public class Main{
      */
     private void actionMenu(int choice){
         switch(choice){
-            //Enter actions here
+            case 0:
+                break;
+            default:
+                showMessage(ConsoleTag.DEBUG, "No set action for index" + choice);
         }
     }
 
@@ -83,14 +88,12 @@ public class Main{
      * USER-INTERFACE METHODS
      ==========================*/
     private void showProgramName(){
-        printf("======== %s ========", "Java Coursework Menu Options");
+        printf("%n%n======== %s ========", "Java Coursework Menu Options");
     }
 
     /** Shows a brief introduction of the program on console */
     private void showIntroduction(){
-        print("\nJava Coursework Introduction!! \nDate Created: YYYY / MM / DD \nCreated by: Dekxisosta ");
-        println();
-        println();
+        print("\nJava Coursework Introduction!! \nDate Created: YYYY / MM / DD \nCreated by: Dekxisosta");
     }
 
     /** Shows a brief conclusion upon program termination */
