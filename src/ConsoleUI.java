@@ -201,7 +201,7 @@ class ConsoleUI {
         SYSTEM("[SYSTEM]"),
         INFO("[INFO]");
 
-        private String label;
+        private final String label;
         ConsoleTag(String label){ this.label = label;}
 
         String label(){return this.label;}

@@ -7,5 +7,5 @@ class Repository {
     DataModel model = new DataModel();
 
     /** Constructor class */
-    Repository(){};
+    Repository(){}
 }
