@@ -3,6 +3,8 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 
 class ConsoleUI {
+    /** Instance field for the service where business logic lies */
+    Service service = new Service();
 
     /** Efficient reader for console inputs */
     private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));

@@ -1,6 +1,12 @@
+/*
+ * Depends on the model used in the program.
+ * Acts as a data-access layer
+ */
 class Repository {
-    /*
-     * Depends on the model used in the program.
-     * Acts as a data-access layer
-     */
+    /** Instance field for the data model */
+    DataModel model = new DataModel();
+
+    /** Constructor class */
+    Repository(){};
+
 }

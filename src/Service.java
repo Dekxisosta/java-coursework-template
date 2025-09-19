@@ -1,4 +1,5 @@
 class Service {
+    Repository repo = new Repository();
     /*
      * This is where business logic should lie.
      * Programs can have multiple services
