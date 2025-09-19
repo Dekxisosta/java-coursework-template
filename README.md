@@ -3,8 +3,8 @@
     <td rowspan="2"><img src="md-images/azur-lane-akashi.gif" width="180"></img></td>
     <td colspan="5">
       <h1> 
-        <img src="https://raw.githubusercontent.com/jmnote/z-icons/master/svg/java.svg" alt="Java Logo" width="50" height="50"> 
         <img src="md-images/dekxi-pfp.png" alt="Dekxi pfp" width="50" height="50"> 
+        <img src="https://raw.githubusercontent.com/jmnote/z-icons/master/svg/java.svg" alt="Java Logo" width="50" height="50"> 
         Java Coursework Template  
       </h1> 
     </td>
