@@ -19,14 +19,64 @@
 
 - - -
 
-##  ===== How to Use =====
+##  ===== Newest Features =====
 
 - - -
 
-This template provides a structured foundation for Java console applications. Key features and usage instructions include:
+- **ANSI color support**: Customize console rendering with ANSI escape codes (via the provided `Ansi` enum) for colored text and improved readability.
 
-- **Configurable menu options**: Easily define program actions in the menu.
-- **Built-in input validation**: Ensures all user input is correctly formatted and within the expected range.
-- **Structured logging**: Includes predefined logging tags **(DEBUG, ERROR, SYSTEM, INFO)** for consistent console messages.
-- **User interface methods**: Ready-made methods for displaying prompts, messages, and program flow information.
-- **Minimized boilerplate**: Handles standard program setup and input/output tasks, allowing developers to focus on core functionality.
+- - -
+
+##  ===== Main Features =====
+
+- - -
+
+- Centralized configuration via ```AppConfig.java```
+
+- Structured logging with ```ConsoleLog.java```
+
+- Input/Output separation with ```ConsoleReader``` and ```ConsolePrinter```
+
+- Clean application flow handled by ```AppRunner``` and ```ConsoleDispatcher```
+
+- Extensible data models in ```model/``` and repository layer in ```repository/```
+
+- Modular business logic in ```service/```
+
+- - -
+
+##  ===== Template Structure =====
+
+- - -
+
+```
+src/
+├── app/
+│   ├── App.java              # Entry point (main method)
+│   └── AppRunner.java        # Main loop & application flow
+│
+├── config/
+│   └── AppConfig.java        # Centralized global constants & settings
+│
+├── dispatcher/
+│   └── ConsoleDispatcher.java # Handles menu navigation & command dispatching
+│
+├── log/
+│   └── ConsoleLog.java       # Structured logging (DEBUG, ERROR, INFO, SYSTEM)
+│
+├── model/
+│   └── DataModel.java        # Example data model (extend as needed)
+│
+├── repository/
+│   └── Repository.java       # Data access layer
+│
+├── service/
+│   └── Service.java          # Business logic layer
+│
+├── ui/
+│   ├── ConsolePrinter.java   # Handles output rendering
+│   ├── ConsoleReader.java    # Handles user input
+│   └── MenuOptions.java      # Centralized menu definitions
+│
+└── util/                     # (Optional) Utility classes/helpers
+```
