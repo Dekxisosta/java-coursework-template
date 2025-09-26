@@ -3,9 +3,7 @@ package dispatcher;
 import ui.ConsolePrinter;
 import ui.ConsoleReader;
 import ui.MenuOptions;
-import log.ConsoleLog;
-
-import java.awt.*;
+import util.Logger;
 
 /**
  * Dispatcher class that coordinates console input and output operations.
@@ -32,7 +30,7 @@ public class ConsoleDispatcher {
             case 0:
                 break;
             default:
-                printer.log("No set action for index " + choice, ConsoleLog.DEBUG);
+                printer.log("No set action for index " + choice, Logger.DEBUG);
         }
     }
 
@@ -89,9 +87,9 @@ public class ConsoleDispatcher {
      * Logs a message with a given type.
      *
      * @param message the message to log
-     * @param log     the {@link ConsoleLog} type (INFO, ERROR, DEBUG, etc.)
+     * @param log     the {@link Logger} type (INFO, ERROR, DEBUG, etc.)
      */
-    public void log(String message, ConsoleLog log){
+    public void log(String message, Logger log){
         printer.log(message, log);
     }
 
@@ -105,7 +103,7 @@ public class ConsoleDispatcher {
             try{
                 return input.readBoolean();
             }catch(Exception e){
-                printer.log(e.getMessage(), ConsoleLog.ERROR);
+                printer.log(e.getMessage(), Logger.ERROR);
                 printer.ask("(y/n)");
             }
         }
@@ -121,7 +119,7 @@ public class ConsoleDispatcher {
             try{
                 return input.readString();
             }catch(Exception e){
-                printer.log(e.getMessage(), ConsoleLog.ERROR);
+                printer.log(e.getMessage(), Logger.ERROR);
                 printer.ask("valid text");
             }
         }
@@ -137,7 +135,7 @@ public class ConsoleDispatcher {
             try{
                 return input.readInt();
             }catch(Exception e){
-                printer.log(e.getMessage(), ConsoleLog.ERROR);
+                printer.log(e.getMessage(), Logger.ERROR);
                 printer.ask("valid integer");
             }
         }
@@ -155,7 +153,7 @@ public class ConsoleDispatcher {
             try{
                 return input.readIntWithinRange(min, max);
             }catch(Exception e){
-                printer.log(e.getMessage(), ConsoleLog.ERROR);
+                printer.log(e.getMessage(), Logger.ERROR);
                 printer.ask("valid integer");
             }
         }
@@ -171,7 +169,7 @@ public class ConsoleDispatcher {
             try{
                 return input.readOption(MenuOptions.getMenuOptions());
             }catch(Exception e){
-                printer.log(e.getMessage(), ConsoleLog.ERROR);
+                printer.log(e.getMessage(), Logger.ERROR);
                 printer.ask("valid option");
             }
         }

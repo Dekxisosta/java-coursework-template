@@ -1,7 +1,7 @@
 package app;
 
 import dispatcher.ConsoleDispatcher;
-import log.ConsoleLog;
+import util.Logger;
 
 /**
  * Controls the main program loop and coordinates interactions
@@ -66,7 +66,7 @@ public class AppRunner {
      *         {@code false} if the program should terminate
      */
     private boolean promptTermination() {
-        dispatcher.log("Exit the program?", ConsoleLog.SYSTEM);
+        dispatcher.log("Exit the program?", Logger.SYSTEM);
         dispatcher.printYNOptions();
         dispatcher.ask("choice");
 

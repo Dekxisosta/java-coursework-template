@@ -52,31 +52,39 @@
 ```
 src/
 ├── app/
-│   ├── App.java              # Entry point (main method)
-│   └── AppRunner.java        # Main loop & application flow
+│   ├── App.java            # Entry point (main method)
+│   └── AppRunner.java      # Main loop & application flow
 │
 ├── config/
-│   └── AppConfig.java        # Centralized global constants & settings
+│   └── AppConfig.java      # Centralized global constants & settings
+│
+├── controller/
+│   └── ListController.java # Handles list operations & delegates to view/model
+│
+├── data/
+│   └── ListData.java       # Data container providing access to list structure
+│
+├── datastructures/
+│   └── LinkedList.java     # Example data structure implementation
 │
 ├── dispatcher/
-│   └── ConsoleDispatcher.java # Handles menu navigation & command dispatching
+│   └── ConsoleDispatcher.java  # Handles menu navigation & command dispatching
 │
 ├── log/
-│   └── ConsoleLog.java       # Structured logging (DEBUG, ERROR, INFO, SYSTEM)
-│
-├── model/
-│   └── DataModel.java        # Example data model (extend as needed)
+│   └── ConsoleLog.java     # Structured logging (DEBUG, ERROR, INFO, SYSTEM)
 │
 ├── repository/
-│   └── Repository.java       # Data access layer
+│   └── Repository.java     # Data access layer (abstracted storage/retrieval)
 │
 ├── service/
-│   └── Service.java          # Business logic layer
+│   └── Service.java        # Business logic layer
 │
 ├── ui/
-│   ├── ConsolePrinter.java   # Handles output rendering
-│   ├── ConsoleReader.java    # Handles user input
-│   └── MenuOptions.java      # Centralized menu definitions
+│   ├── ConsolePrinter.java # Handles output rendering
+│   ├── ConsoleReader.java  # Handles user input
+│   └── MenuOptions.java    # Centralized menu definitions
 │
-└── util/                     # (Optional) Utility classes/helpers
+└── util/
+    ├── Ansi.java           # ANSI styling helpers (colors, effects)
+    └── Logger.java         # Logging labels & constants
 ```
