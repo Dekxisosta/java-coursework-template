@@ -5,7 +5,7 @@
       <h1> 
         <img src="md-images/dekxi-pfp.png" alt="Dekxi pfp" width="50" height="50"> 
         <img src="https://raw.githubusercontent.com/jmnote/z-icons/master/svg/java.svg" alt="Java Logo" width="50" height="50"> 
-        Java Coursework Template  
+        Java Console-based Coursework Template  
       </h1> 
     </td>
   </tr>
